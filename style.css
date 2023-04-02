@@ -1,0 +1,170 @@
+section {
+    padding: 128px;
+    position: relative;
+}
+
+/* psudou class about */
+section::before {
+    z-index: -1;
+    content: '';
+    font-size: 72px;
+    color: gray;
+    opacity: 0.25;
+    position: absolute;
+    font-weight: 700;
+    top: 20px;
+    left: -10px;
+}
+
+.btn.button {
+    border: 3px solid black;
+    border-radius: 24px;
+}
+
+.btn.button:hover, .btn-button {
+    border: 3px solid black;
+    background-color: black;
+    color: white;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
+}
+
+.home h1 {
+    font-size: 72px;
+}
+
+.home h3 {
+    font-size: 48px;
+}
+
+.home img {
+    width: 100%;
+}
+
+.home .arrow img{
+    width: 60px;
+}
+
+#arrow {
+    animation: 1s upDown infinite;
+}
+
+/* psudou class */
+.about::before {
+    content: 'About';
+}
+
+.about-exp-item {
+    margin-top: 24px;
+}
+
+.about-exp-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-exp-item-detail {
+    display: none;
+}
+
+.work::before {
+    content: 'Work'
+}
+
+.work-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "work-1 work-2" "work-3 work-3";
+    gap: 16px;
+}
+
+.work-img img {
+    width: 100%;
+}
+
+#work-1 {
+    grid-area: work-1;
+}
+
+#work-2 {
+    grid-area: work-2;
+}
+
+#work-3 {
+    grid-area: work-3;
+}
+
+.work-img-item {
+    position: relative;
+}
+
+.work-img-item:hover:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100%;
+    font-size: 30px;
+    
+}
+
+#work-1:hover::after {
+    content: 'Web Project';
+}
+
+#work-2:hover::after {
+    content: 'Web Project';
+}
+
+#work-3:hover::after {
+    content: 'Web Project';
+}
+
+.contact::before {
+    content: 'Contact';
+}
+
+.contact-form {
+    border: 1px solid black;
+    padding: 64px 32px;
+}
+
+@media only screen and (max-width: 768px) {
+    .home .col-4 img {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    section::before {
+        left: 5px;
+        font-size: 64px;
+    }
+}
+
+/* animasi more info */
+
+@keyframes upDown{
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
